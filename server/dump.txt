@@ -1,0 +1,14 @@
+userType : {
+            type : String,
+            enum : ["medecin","patient","infermier","admin"],
+            default : "admin"
+        },
+        medecin : {type: mongoose.Types.ObjectId, 
+            ref: "Medecin" ,
+        },
+        patient : {type: mongoose.Types.ObjectId, 
+            ref: "Patient" ,
+        },
+        infermier : {type: mongoose.Types.ObjectId, 
+            ref: "Infermier" ,
+        },

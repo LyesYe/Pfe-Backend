@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router-dom'
 const Register = () => {
 	const history = useNavigate()
 
-	const [username, setName] = useState('')
 	const [email, setEmail] = useState('')
+	const [username, setName] = useState('')
 	const [first_Name, setFirst] = useState('')
 	const [last_Name, setLast] = useState('')
 	const [password, setPassword] = useState('')

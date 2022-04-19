@@ -1,8 +1,8 @@
 const express = require("express"),
     { isLoggedIn, isAdmin } = require("../middleware/auth"),
-    { showUser, updateUser, userToAdmin } = require("../middleware/user");
+    { showAllUsers ,showUser, updateUser, userToAdmin } = require("../middleware/user");
 router = express.Router();
 
+router.route("/").get(isLoggedIn, showAllUsers);
 router.route("/:id").get(showUser).put(isLoggedIn, updateUser);
-router.route("/:id/toAdmin").put(isLoggedIn, isAdmin, userToAdmin);
 module.exports = router;

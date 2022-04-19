@@ -5,10 +5,10 @@ const
     user = require("./models/user"),
     userRouter = require("./routes/user"),
     authRouter = require("./routes/auth"),
+    medRouter = require("./routes/medecin"),
     port=3001;
 
-
-    const cors = require('cors');
+const cors = require('cors');
     app.use(cors());
 
 
@@ -18,6 +18,7 @@ require('dotenv').config({ path: '../.env' });
 app.use(express.json());
 app.use("/auth",authRouter);
 app.use("/user", userRouter);
+app.use("/med", medRouter);
 
 
 mongoose.set("debug", true); // in devolpment process

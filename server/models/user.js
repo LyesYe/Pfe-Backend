@@ -1,16 +1,18 @@
-const mongoose = require("mongoose"),
+const 
+mongoose = require("mongoose"),
     jwt = require("jsonwebtoken"),
+    options = { discriminatorKey: "kind" };
     bcrypt = require("bcrypt");
     userSchema = new mongoose.Schema({
         email: {
             required: true,
             type: String,
             unique: true,
+            lowercase: true
         },
         username: {
             required: true,
             type: String,
-            unique: true,
         },
         first_Name: {
             required: true,
@@ -20,16 +22,11 @@ const mongoose = require("mongoose"),
             required: true,
             type: String,
         },
-        is_Admin: {
-            type: Boolean,
-            default: false,
-        },
         password: {
             type: String,
             required: true,
-        }
-
-    });
+        },
+    }, options);
     
     userSchema.pre("save", async function (next) {
         try {

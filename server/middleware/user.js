@@ -24,6 +24,14 @@ module.exports = {
             res.json({ error: e.message });
         }
     },
+    showAllUsers: async (req, res) => {
+        try {
+            const u = await User.find().select({_id : 0 , password: 0});
+            res.json(u);
+        } catch (e) {
+            res.json({ error: e.message });
+        }
+    },
     showUser: async (req, res) => {
         const id = req.params.id;
         try {

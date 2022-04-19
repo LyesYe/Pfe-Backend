@@ -8,18 +8,24 @@ import {BrowserRouter ,
 import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
 import Dashboard from './pages/Dashboard.jsx'
+import Home from './pages/home.jsx'
+
 
 
 function App() {
+
   return (
     <div>
+
       <BrowserRouter>
       <Routes>
+            <Route path="/" exact element={< Home />} />
             <Route path="/login" exact element={< Login />} />
             <Route path="/register" exact element={< Register />} />
             <Route path="/dashboard" exact element={< Dashboard />} />
         </Routes>
       </BrowserRouter>
+
     </div>
   );
 }
